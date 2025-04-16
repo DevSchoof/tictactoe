@@ -6,9 +6,9 @@ export default function Board({ xIsNext, squares, onPlay }) {
     const winner = CalculateWinner(squares);
     let status;
     if (winner) {
-      status = `Winner: ${winner}`;
+      status = `Vencedor: ${winner}`;
     } else {
-      status = `Next Player: ${xIsNext ? 'X' : 'O'}`;
+      status = `Próximo Jogador: ${xIsNext ? 'X' : 'O'}`;
     }
 
 
@@ -20,20 +20,17 @@ export default function Board({ xIsNext, squares, onPlay }) {
       nextSquares[i] = xIsNext ? 'X' : "O"
       onPlay(nextSquares);
     }
-  
-      
+        
     return (
       <>
         <div className="status"
         style={{
-        fontSize: '24px',
+        fontSize: '80px',
         fontWeight: 'bold',
         margin: '20px 0',
         textAlign: 'center'
       }}>
           {status}</div>
-
-
 
         <div className="board-row">
           <Square value={squares[0]} onSquareClick={() => handleClick(0)} />

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Board from './Board.jsx';
+import Button from '@mui/material/Button';
 
 
 export default function Game() {
@@ -27,8 +28,33 @@ export default function Game() {
       }
       return (
         <li key={move}>
-          <button onClick={() => jumpTo(move)}>{description}</button>
+          <Button variant="contained" 
+          aria-label="Large button group" 
+          className="Move" 
+          onClick={() => jumpTo(move)}
+          sx={{width: '240px',
+            textAlign: 'center',
+            alignContent: 'center',
+            alignItems: 'center', 
+            alignSelf: 'center',
+            alignmentBaseline: 'center',
+            height: '50px',
+            minWidth: '64px',
+            fontSize: '20px', 
+            padding: 0, 
+            backgroundColor: 'rgba(0, 0, 0, 0.01)',
+            justifyContent: 'space-between',
+            borderColor: 'black',
+            borderRadius: '10px',
+            fontFamily: 'revert',
+            color: 'lightblue',
+          
+          }}
+          >
+          {description}
+          </Button>
         </li>
+      
       );
     });
     return (
